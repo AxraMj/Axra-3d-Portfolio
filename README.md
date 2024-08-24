@@ -2,9 +2,7 @@
 
 You can check out the live demo of the project here:
 
-[Live Demo](axra-3d-portfolio.vercel.app
-)
-
+[Live Demo](https://axra-3d-portfolio.vercel.app/)
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
