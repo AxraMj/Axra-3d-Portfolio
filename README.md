@@ -2,7 +2,7 @@
 
 You can check out the live demo of the project here:
 
-[Live Demo](axra-3d-portfolio.vercel.app)
+[Live Demo] axra-3d-portfolio.vercel.app
 
 # React + Vite
 
