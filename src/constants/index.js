@@ -1,32 +1,31 @@
 import {
-    mobile,
-    backend,
-    creator,
-    web,
-    javascript,
-    typescript,
-    html,
-    css,
-    reactjs,
-    redux,
-    tailwind,
-    nodejs,
-    mongodb,
-    git,
-    figma,
-    docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
-    carrent,
-    jobit,
-    tripguide,
-    threejs,
-  } from "../assets";
-  
-  
-  
+  mobile,
+  backend,
+  creator,
+  web,
+  javascript,
+  typescript,
+  html,
+  css,
+  reactjs,
+  redux,
+  tailwind,
+  nodejs,
+  mongodb,
+  git,
+  figma,
+  docker,
+  expressjs, // Add this
+  python, // Add this
+  meta,
+  starbucks,
+  tesla,
+  shopify,
+  carrent,
+  jobit,
+  tripguide,
+  threejs,
+} from "../assets";
   
   export const navLinks = [
     {
@@ -68,6 +67,10 @@ import {
       icon: mongodb,
     },
     {
+      name: "Express JS",
+      icon: expressjs, // Add this
+    },
+    {
       name: "React JS",
       icon: reactjs,
     },
@@ -76,15 +79,20 @@ import {
       icon: nodejs,
     },
     {
-      name: "git",
+      name: "Git",
       icon: git,
     },
     {
-      name: "figma",
+      name: "Figma",
       icon: figma,
     },
-
+  
+    {
+      name: "Python",
+      icon: python, // Add this
+    },
   ];
+  
   
   const experiences = [
     {
