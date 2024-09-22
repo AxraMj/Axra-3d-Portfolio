@@ -30,7 +30,7 @@ import tesla from "./company/tesla.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import thumnail from "./thumnail.png";
 
 
 export {
@@ -61,7 +61,7 @@ export {
   tesla,
   carrent,
   jobit,
-  tripguide,
+  thumnail,
   expressjs,
   python
   

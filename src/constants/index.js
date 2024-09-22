@@ -23,7 +23,7 @@ import {
   shopify,
   carrent,
   jobit,
-  tripguide,
+  thumnail,
   threejs,
 } from "../assets";
   
@@ -206,8 +206,8 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+      image: thumnail,
+      source_code_link: "https://github.com/AxraMj/my-project.git",
     },
   ];
   
