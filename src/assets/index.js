@@ -29,7 +29,7 @@ import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
 import carrent from "./carrent.png";
-import jobit from "./jobit.png";
+import Application from "./Application.png";
 import thumnail from "./thumnail.png";
 
 
@@ -60,7 +60,7 @@ export {
   starbucks,
   tesla,
   carrent,
-  jobit,
+  Application,
   thumnail,
   expressjs,
   python

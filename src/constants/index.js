@@ -22,7 +22,7 @@ import {
   tesla,
   shopify,
   carrent,
-  jobit,
+  Application,
   thumnail,
   threejs,
 } from "../assets";
@@ -168,25 +168,25 @@ import {
       source_code_link: "https://github.com/AxraMj/Machine-Learning-Projects.git",
     },
     {
-      name: "Computer Association Management System",
+      name: "OTT Application",
       description:
-        "Developed CAMS using PHP and MySQL to streamline event management, enabling user registration, feedback, and admin controls with a responsive design.",
+        "Our OTT application offers seamless streaming of a vast library of movies, TV shows, and exclusive content over the internet. Enjoy high-quality entertainment anytime, anywhere, on various devices—no traditional cable or satellite required.",
       tags: [
         {
-          name: "php",
+          name: "ReactNative",
           color: "blue-text-gradient",
         },
         {
-          name: "mysql",
+          name: "StyledComponent",
           color: "green-text-gradient",
         },
         {
-          name: "Javascript",
+          name: "Expo",
           color: "pink-text-gradient",
         },
       ],
-      image: jobit,
-      source_code_link: "https://github.com/AxraMj/PHP-Project.git",
+      image: Application,
+      source_code_link: "https://github.com/AxraMj/my-app.git",
     },
     {
       name: "OTT Streaming Plaform",
