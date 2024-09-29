@@ -21,7 +21,7 @@ import {
   starbucks,
   tesla,
   shopify,
-  carrent,
+  MaskedFace,
   Application,
   Applewebsite,
   Threejs,
@@ -178,7 +178,7 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
+      image: MaskedFace,
       source_code_link: "https://github.com/AxraMj/Machine-Learning-Projects.git",
     },
     {

@@ -33,6 +33,7 @@ import carrent from "./carrent.png";
 import Application from "./Application.png";
 import Applewebsite from "./Applewebsite.png";
 import thumnail from "./thumnail.png"
+import MaskedFace from './MaskedFace.png'
 
 
 export {
@@ -63,6 +64,7 @@ export {
   carrent,
   Application,
   Applewebsite,
+  MaskedFace,
   thumnail,
   expressjs,
   python,
