@@ -26,6 +26,8 @@ import {
   Applewebsite,
   threejs,
   thumnail,
+  Threejs,
+  GSAP
 } from "../assets";
   
   export const navLinks = [
@@ -78,6 +80,18 @@ import {
     {
       name: "Node JS",
       icon: nodejs,
+    },
+    {
+      name: "Three JS",
+      icon: Threejs,
+    },
+    {
+      name: "GSAP",
+      icon: GSAP,
+    },
+    {
+      name: "Tailwind",
+      icon: tailwind,
     },
     {
       name: "Git",
