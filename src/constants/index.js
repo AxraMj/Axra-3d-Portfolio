@@ -24,9 +24,8 @@ import {
   carrent,
   Application,
   Applewebsite,
-  threejs,
-  thumnail,
   Threejs,
+  thumnail,
   GSAP
 } from "../assets";
   

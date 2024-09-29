@@ -19,10 +19,9 @@ import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
 import expressjs from "./tech/expressjs.png"; // Assuming you have expressjs.svg in the assets folder
 import python from './tech/python.png'; // Assuming you have python.svg in the assets folder
-import Threejs from './tech/Threejs.svg'
+import Threejs from './tech/Threejs.png'
 import GSAP from './tech/GSAP.svg'
 
 import meta from "./company/meta.png";
@@ -57,7 +56,6 @@ export {
   redux,
   tailwind,
   typescript,
-  threejs,
   meta,
   shopify,
   starbucks,
