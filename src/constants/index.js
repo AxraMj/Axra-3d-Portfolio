@@ -23,8 +23,9 @@ import {
   shopify,
   carrent,
   Application,
-  thumnail,
+  Applewebsite,
   threejs,
+  thumnail,
 } from "../assets";
   
   export const navLinks = [
@@ -208,6 +209,28 @@ import {
       ],
       image: thumnail,
       source_code_link: "https://github.com/AxraMj/my-project.git",
+    },
+
+    {
+      name: "3D IPhone Website",
+      description:
+      "I built a website that looks like the iPhone 15 pro page from Apple. I used React,Threejs, and GSAP to make, it work smoothly on any device",
+      tags: [
+        {
+          name: "reactjs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Threejs",
+          color: "green-text-gradient",
+        },
+        {
+          name: "GSAP",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: Applewebsite,
+      source_code_link: "https://github.com/AxraMj/Apple-website.git",
     },
   ];
   
