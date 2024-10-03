@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
-import { styles } from "../styles";  // Ensure styles are imported correctly
-import { ComputersCanvas } from "./canvas";
+
+import { styles } from "../styles";
 
 const Hero = () => {
   return (
-    <section
-      className={`relative w-full h-screen mx-auto bg-[url('/path/to/image.jpg')] bg-cover bg-center`}
-    >
+    <section className={`relative w-full h-screen mx-auto`}>
       <div
         className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -26,7 +24,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <ComputersCanvas />
+      {/* Remove ComputersCanvas to eliminate the 3D renderer */}
+      {/* <ComputersCanvas /> */}
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
