@@ -7,6 +7,7 @@ const ProjectForm = () => {
   const token = localStorage.getItem('adminToken');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [previewImage, setPreviewImage] = useState('');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -32,6 +33,7 @@ const ProjectForm = () => {
       const response = await fetch(`http://localhost:5000/api/projects/${id}`);
       const data = await response.json();
       setFormData(data);
+      setPreviewImage(data.image);
     } catch (error) {
       setError('Failed to fetch project');
     }
@@ -42,6 +44,19 @@ const ProjectForm = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // Create preview URL
+      const previewUrl = URL.createObjectURL(file);
+      setPreviewImage(previewUrl);
+      setFormData({
+        ...formData,
+        image: file
+      });
+    }
   };
 
   const handleTagChange = (index, field, value) => {
@@ -68,6 +83,16 @@ const ProjectForm = () => {
     setError('');
 
     try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('description', formData.description);
+      formDataToSend.append('source_code_link', formData.source_code_link);
+      formDataToSend.append('tags', JSON.stringify(formData.tags));
+      
+      if (formData.image instanceof File) {
+        formDataToSend.append('image', formData.image);
+      }
+
       const url = id
         ? `http://localhost:5000/api/projects/${id}`
         : 'http://localhost:5000/api/projects';
@@ -77,10 +102,9 @@ const ProjectForm = () => {
       const response = await fetch(url, {
         method,
         headers: {
-          'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify(formData)
+        body: formDataToSend
       });
 
       if (!response.ok) throw new Error('Failed to save project');
@@ -139,17 +163,26 @@ const ProjectForm = () => {
 
           <div className="mb-4">
             <label className="block text-white mb-2" htmlFor="image">
-              Image URL
+              Project Image
             </label>
             <input
-              type="text"
+              type="file"
               id="image"
               name="image"
-              value={formData.image}
-              onChange={handleChange}
+              onChange={handleImageChange}
+              accept="image/*"
               className="w-full px-3 py-2 rounded bg-secondary text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
-              required
+              required={!id}
             />
+            {previewImage && (
+              <div className="mt-2">
+                <img
+                  src={previewImage.startsWith('http') ? previewImage : `http://localhost:5000${previewImage}`}
+                  alt="Preview"
+                  className="max-w-xs rounded-lg shadow-lg"
+                />
+              </div>
+            )}
           </div>
 
           <div className="mb-4">

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Project = require('../models/Project');
 const auth = require('../middleware/auth');
+const upload = require('../middleware/upload');
 
 // Get all projects (public)
 router.get('/', async (req, res) => {
@@ -27,28 +28,42 @@ router.get('/:id', async (req, res) => {
 });
 
 // Add a new project (protected)
-router.post('/', auth, async (req, res) => {
-  const project = new Project(req.body);
+router.post('/', auth, upload.single('image'), async (req, res) => {
   try {
+    const projectData = {
+      ...req.body,
+      tags: JSON.parse(req.body.tags),
+      image: req.file ? `/${req.file.filename}` : req.body.image
+    };
+    
+    const project = new Project(projectData);
     const newProject = await project.save();
     res.status(201).json(newProject);
   } catch (error) {
+    console.error('Error creating project:', error);
     res.status(400).json({ message: error.message });
   }
 });
 
 // Update a project (protected)
-router.put('/:id', auth, async (req, res) => {
+router.put('/:id', auth, upload.single('image'), async (req, res) => {
   try {
     const project = await Project.findById(req.params.id);
     if (!project) {
       return res.status(404).json({ message: 'Project not found' });
     }
 
-    Object.assign(project, req.body);
+    const projectData = {
+      ...req.body,
+      tags: JSON.parse(req.body.tags),
+      image: req.file ? `/${req.file.filename}` : req.body.image
+    };
+
+    Object.assign(project, projectData);
     const updatedProject = await project.save();
     res.json(updatedProject);
   } catch (error) {
+    console.error('Error updating project:', error);
     res.status(400).json({ message: error.message });
   }
 });
