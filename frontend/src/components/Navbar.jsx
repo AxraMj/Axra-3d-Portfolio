@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaFileDownload } from 'react-icons/fa';
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -48,7 +49,7 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden sm:flex flex-row gap-10 items-center">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -60,6 +61,16 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          <li>
+            <a
+              href="/Resume_Akshara.pdf"
+              download="Resume_Akshara.pdf"
+              className="text-secondary hover:text-white text-[18px] font-medium cursor-pointer transition-colors duration-300 flex items-center gap-2"
+            >
+              <FaFileDownload className="w-5 h-5" />
+              <span>Resume</span>
+            </a>
+          </li>
         </ul>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -90,6 +101,12 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+              <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px] transition-colors duration-300 flex items-center gap-2">
+                <FaFileDownload className="w-4 h-4" />
+                <a href="/Resume_Akshara.pdf" download="Resume_Akshara.pdf">
+                  Resume
+                </a>
+              </li>
             </ul>
           </div>
         </div>
