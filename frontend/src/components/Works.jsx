@@ -26,9 +26,9 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[500px] flex flex-col'
+        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-[450px] sm:h-[500px] flex flex-col'
       >
-        <div className='relative w-full h-[230px]'>
+        <div className='relative w-full h-[200px] sm:h-[230px]'>
           <img
             src={imageUrl}
             alt='project_image'
@@ -38,7 +38,7 @@ const ProjectCard = ({
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform'
             >
               <img
                 src={github}
@@ -49,17 +49,17 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <div className='flex-grow flex flex-col justify-between'>
+        <div className='flex-grow flex flex-col justify-between mt-4'>
           <div>
-            <h3 className='text-white font-bold text-[24px] mt-5'>{name}</h3>
-            <p className='mt-2 text-secondary text-[14px] h-[100px] overflow-y-auto'>{description}</p>
+            <h3 className='text-white font-bold text-[20px] sm:text-[24px]'>{name}</h3>
+            <p className='mt-2 text-secondary text-[13px] sm:text-[14px] h-[80px] sm:h-[100px] overflow-y-auto'>{description}</p>
           </div>
 
           <div className='mt-4 flex flex-wrap gap-2'>
             {tags.map((tag) => (
               <p
                 key={`${name}-${tag.name}`}
-                className={`text-[14px] ${tag.color}`}
+                className={`text-[12px] sm:text-[14px] ${tag.color}`}
               >
                 #{tag.name}
               </p>
@@ -97,14 +97,14 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <p className={`${styles.sectionSubText} text-center sm:text-left`}>My work</p>
+        <h2 className={`${styles.sectionHeadText} text-center sm:text-left`}>Projects.</h2>
       </motion.div>
 
       <div className='w-full flex'>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+          className='mt-3 text-secondary text-[15px] sm:text-[17px] max-w-3xl leading-[30px] text-center sm:text-left'
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
@@ -116,7 +116,9 @@ const Works = () => {
 
       <div className='mt-20 flex flex-wrap gap-7 justify-center'>
         {loading ? (
-          <p className='text-white'>Loading projects...</p>
+          <div className="flex items-center justify-center w-full">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
+          </div>
         ) : (
           projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
