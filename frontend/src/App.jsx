@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Footer } from "./components";
 import { Login, Dashboard, ProjectForm } from "./components/admin";
 
 const MainLayout = () => (
@@ -17,6 +17,7 @@ const MainLayout = () => (
       <Contact />
       <StarsCanvas />
     </div>
+    <Footer />
   </div>
 );
 
