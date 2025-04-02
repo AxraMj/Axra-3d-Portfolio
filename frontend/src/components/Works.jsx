@@ -6,7 +6,7 @@ import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = 'https://axra-3d-portfolio-6.onrender.com';
 
 const ProjectCard = ({
   index,
