@@ -105,7 +105,7 @@ const projects = [
       }
     ],
     image: "/Travo Thumnail.png",
-    source_code_link: "https://github.com/AxraMj/Travo.git"
+    source_code_link: "https://github.com/AxraMj/Travo-App-Project-Final.git"
   }
 ];
 
