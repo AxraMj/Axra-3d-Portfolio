@@ -7,12 +7,9 @@ const upload = require('../middleware/upload');
 // Get all projects (public)
 router.get('/', async (req, res) => {
   try {
-    console.log('Fetching projects...');
     const projects = await Project.find().sort({ createdAt: -1 });
-    console.log('Found projects:', projects);
     res.json(projects);
   } catch (error) {
-    console.error('Error fetching projects:', error);
     res.status(500).json({ message: error.message });
   }
 });

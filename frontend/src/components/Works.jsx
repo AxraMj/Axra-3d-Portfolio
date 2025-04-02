@@ -74,23 +74,26 @@ const ProjectCard = ({
 const Works = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        setError(null);
-        const response = await fetch(`${BACKEND_URL}/api/projects`);
+        const response = await fetch(`${BACKEND_URL}/api/projects`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          credentials: 'include'
+        });
         
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error('Failed to fetch projects');
         }
         const data = await response.json();
-        console.log('Received data:', data);
         setProjects(data);
       } catch (error) {
         console.error('Error fetching projects:', error);
-        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -98,10 +101,6 @@ const Works = () => {
 
     fetchProjects();
   }, []);
-
-  if (error) {
-    return <div className="text-red-500">Error: {error}</div>;
-  }
 
   return (
     <>
