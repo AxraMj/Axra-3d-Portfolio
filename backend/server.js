@@ -8,7 +8,9 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'https://axra-3d-portfolio.vercel.app/' // Replace with your actual Vercel URL
+  origin: ['https://axra-3d-portfolio.vercel.app', 'http://localhost:5173'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 

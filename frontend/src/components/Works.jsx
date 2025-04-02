@@ -74,18 +74,23 @@ const ProjectCard = ({
 const Works = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('https://axra-3d-portfolio-6.onrender.com/api/projects');
+        setError(null);
+        const response = await fetch(`${BACKEND_URL}/api/projects`);
+        
         if (!response.ok) {
-          throw new Error('Failed to fetch projects');
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
+        console.log('Received data:', data);
         setProjects(data);
       } catch (error) {
         console.error('Error fetching projects:', error);
+        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -93,6 +98,10 @@ const Works = () => {
 
     fetchProjects();
   }, []);
+
+  if (error) {
+    return <div className="text-red-500">Error: {error}</div>;
+  }
 
   return (
     <>
