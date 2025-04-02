@@ -78,7 +78,7 @@ const Works = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/projects');
+        const response = await fetch('https://axra-3d-portfolio-6.onrender.com/api/projects');
         if (!response.ok) {
           throw new Error('Failed to fetch projects');
         }
