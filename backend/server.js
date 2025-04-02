@@ -7,7 +7,9 @@ const dotenv = require('dotenv');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://axra-3d-portfolio.vercel.app/' // Replace with your actual Vercel URL
+}));
 app.use(express.json());
 
 // Serve static files from the public directory
