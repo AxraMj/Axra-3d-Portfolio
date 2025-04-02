@@ -82,6 +82,30 @@ const projects = [
     ],
     image: "/Applewebsite.png",
     source_code_link: "https://github.com/AxraMj/Apple-website.git"
+  },
+  {
+    name: "Travo: Social Media App",
+    description: "Travo is a full-stack travel social platform designed to connect travelers (Explorers) and content creators (Creators). It allows users to discover destinations, share experiences, and interact socially through posts, guides, and location-based features.",
+    tags: [
+      {
+        name: "react native",
+        color: "blue-text-gradient"
+      },
+      {
+        name: "expressjs",
+        color: "green-text-gradient"
+      },
+      {
+        name: "nodejs",
+        color: "pink-text-gradient"
+      },
+      {
+        name: "mongodb",
+        color: "orange-text-gradient"
+      }
+    ],
+    image: "/Travo Thumnail.png",
+    source_code_link: "https://github.com/AxraMj/Travo.git"
   }
 ];
 
